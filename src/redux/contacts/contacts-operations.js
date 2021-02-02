@@ -8,7 +8,7 @@ export const fetchContacts = () => async dispatch => {
 
     dispatch(contactsActions.fetchContactsSuccess(items));
   } catch (error) {
-    dispatch(contactsActions.fetchContactsError(error));
+    dispatch(contactsActions.fetchContactsError(error.message));
   }
 };
 
@@ -24,7 +24,7 @@ export const addContact = (contactName, contactNumber) => async dispatch => {
       .addContact(contact)
       .then(data => dispatch(contactsActions.addContactSuccess(data)));
   } catch (error) {
-    dispatch(contactsActions.addContactError(error));
+    dispatch(contactsActions.addContactError(error.message));
   }
 };
 
@@ -35,6 +35,6 @@ export const removeContact = id => async dispatch => {
       .deleteContact(id)
       .then(() => dispatch(contactsActions.deleteContactSuccess(id)));
   } catch (error) {
-    contactsActions.deleteContactRequest(error);
+    contactsActions.deleteContactRequest(error.message);
   }
 };

@@ -21,10 +21,11 @@ import {
   getFilter,
   getLoader,
   getError,
+  getVisibleContacts,
 } from './contacts-selectors';
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {
+export {
   //--Opretions--//
   fetchContacts,
   addContact,
@@ -45,4 +46,5 @@ export default {
   getFilter,
   getLoader,
   getError,
+  getVisibleContacts,
 };
